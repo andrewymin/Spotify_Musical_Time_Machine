@@ -11,6 +11,7 @@ load_dotenv(dotenv_path)
 
 CLIENT_ID = os.getenv("CLIENT_ID")
 CLIENT_SECRET =os.getenv("CLIENT_SECRET")
+PLAYLIST_ID=os.getenv("PLAYLIST_ID")
 REDIRECT_URL = "http://example.com"
 TEST_SONG = "One Dance"
 pp = PrettyPrinter(indent=4)
@@ -58,7 +59,7 @@ for song in song_titles:
 
 # new_playlist = sp.user_playlist_create(user=user_id, name=f"{date_entry} Billboard 100", public=False)
 # print(new_playlist)
-billboard_playlist_id = "spotify:playlist:0lkTivkex6ifZ525qz6yHQ"
+billboard_playlist_id = PLAYLIST_ID
 
 sp.playlist_add_items(playlist_id=billboard_playlist_id, items=tracks)
 # pp.pprint(sp.playlist_items(playlist_id=billboard_playlist_id))
